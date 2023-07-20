@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CDD Official Registration</title>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.js">
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;700&display=swap');
+
+        * {
+            color: #17293c;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: url('https://source.unsplash.com/1920x1080/?dark greyish color, navy grey blue background');
+        }
+
+        :root {
+            --primary-text-color: #183b56;
+            --secondary-text-color: #f2f5f8;
+            --accent-color: #2294ed;
+            --accent-color-dark: #1d69a3;
+            ---padding-inline-section: 20px;
+        }
+
+        h1,
+        h2 {
+            margin: 0 auto;
+            padding: 0;
+            text-align: center;
+            color: #17293c;
+            font-size: 18px;
+            font-family: 'Poppins', sans-serif;
+            color: var(--secondary-text-color);
+        }
+        label{
+            color: var(--secondary-text-color);
+
+        }
+        input[type=button] {
+            font-size: 15px;
+            font-family: 'Poppins', sans-serif;
+
+            display: block;
+            display: inline-block;
+            vertical-align: middle;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        ::placeholder {
+            color: #999;
+            text-transform: lowercase;
+            color: var(--primary-text-color);
+        }
+
+        ul {
+            display: inline-block;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            width: 97%;
+        }
+
+        ul>li {
+            margin-left: 2%;
+        }
+
+        ul>li>input[type=text] {
+            width: 99%;
+        }
+
+        #container ul>li {
+            width: 94%;
+            color: #000;
+            font-size: 18px;
+            font-family: 'Poppins', sans-serif;
+            color: var(--secondary-text-color);
+
+        }
+        .subject{
+            color: var(--secondary-text-color);
+
+        }
+        #container_data_entry {
+            font-family: 'Poppins', sans-serif;
+            /* color: var(--secondary-text-color); */
+            border: solid 1px #ccc;
+            border-radius: 4px;
+            margin: 5px 5px 5px 0;
+            padding: 10px 5px;
+            background-color: #f5f5f5;
+            overflow: auto;
+            height: 100%;
+            background: rgba(28, 28, 89, 0.2);
+            box-shadow: 0 0 30px rgba(18, 18, 18, 0.9);
+            border-radius: 20px;
+            backdrop-filter: blur(40px);
+        }
+
+        #student_details {
+            padding: 10px 0;
+            /* background-color: #f5f5f5; */
+            /* color: var(--secondary-text-color); */
+            color: #3d3d3d;
+            border: solid 1px #ccc;
+            border-radius: 4px;
+            margin: 5px 0 5px 5px;
+            width: 25%;
+            background: rgba(28, 28, 89, 0.2);
+            box-shadow: 0 0 30px rgba(18, 18, 18, 0.9);
+            border-radius: 20px;
+            backdrop-filter: blur(40px);
+            float: right;
+            font-family: 'Poppins', sans-serif;
+            color: var(--secondary-text-color);
+        }
+
+        input[type=text],
+        textarea {
+            font-size: 16px;
+            font-weight: 500;
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary-text-color);
+            text-align: left;
+            width: auto;
+            padding: 9px;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            margin: 5px 0;
+        }
+
+        textarea {
+            height: 3em;
+            width: 100%;
+            color: var(--primary-text-color);
+        }
+
+        .btTakeSnap {
+            font-family: 'Poppins', sans-serif;
+            border-radius: 25%;
+
+        }
+
+        .btPrint {
+            font-family: 'Poppins', sans-serif;
+
+        }
+        .itwasnecessary{
+            color: var(--secondary-text-color);
+
+        }
+
+        #picturebox {
+            display: none;
+            position: fixed;
+            border: 0;
+            top: 0;
+            right: 0;
+            left: 0;
+            overflow-x: auto;
+            overflow-y: hidden;
+            z-index: 9999;
+            background-color: rgba(239, 239, 239, .9);
+            width: 100%;
+            height: 100%;
+            padding-top: 10px;
+            text-align: center;
+            cursor: pointer;
+            -webkit-box-align: center;
+            -webkit-box-orient: vertical;
+            -webkit-box-pack: center;
+            -webkit-transition: .2s opacity;
+            -webkit-perspective: 1000;
+        }
+
+        .revdivshowimg {
+            display: block;
+            width: 300px;
+            top: 20%;
+            text-align: center;
+            margin: 0 auto;
+            padding: 0;
+            position: relative;
+            background-color: #fff;
+            webkit-box-shadow: 6px 0 10px rgba(0, 0, 0, .2), -6px 0 10px rgba(0, 0, 0, .2);
+            -moz-box-shadow: 6px 0 10px rgba(0, 0, 0, .2), -6px 0 10px rgba(0, 0, 0, .2);
+            box-shadow: 6px 0 10px rgba(0, 0, 0, .2), -6px 0 10px rgba(0, 0, 0, .2);
+            overflow: hidden;
+        }
+        .topper{
+            color: var(--secondary-text-color);
+        }
+        .Iamuseless{
+            color: var(--secondary-text-color);
+
+        }
+        footer{
+            font-weight:900 ;
+            font-size: 20px;
+            font-family: 'Poppins', sans-serif;
+            color: rgb(237, 232, 232)
+        }
+    </style>
+</head>
+
+<body>
+
+    <div style="width:100%;overflow:hidden;margin:0;padding:20px 0;">
+        <h1 class="topper">Coding Design and Developement Registration form</h1>
+    </div>
+
+
+    <div id="student_details">
+        <h2>New Member Details</h2>
+        <ul>
+            <li><label>Name:</label>
+                <input type="text" id="txtStudentName" placeholder="enter your name" />
+            </li>
+            <li><label>Registration No.:</label>
+                <input type="text" id="redgno" placeholder="enter your regd. no." />
+            </li>
+            <li><label>Branch:</label>
+                <input type="text" id="brnch" placeholder="enter your respective branch" />
+            </li>
+            <li><label>Year:</label>
+                <input type="text" id="yer" placeholder="enter your year of study." />
+            </li>
+            <li><label>Picture:</label>
+                <p id="snapShot" style="width:125px;height:107px;border:solid 1px #888;margin-left:2%;"></p>
+
+                <input type="button" id="btTakeSnap" onclick="onlineFormApp.takeSnapshot(this)"
+                    value="Take a Snapshot" />
+            </li>
+        </ul>
+    </div>
+
+
+    <div id="container_data_entry">
+
+        <h2 id="subject"><b class="Iamuseless">Registration form</b></h2> <br />
+
+
+        <div id="container" style="width:100%;overflow:auto;">
+            <ul>
+                <li>
+                    <b class="itwasnecessary">Q No. 1:</b>
+                    What's your domain of interest and why ? (Full Stack Web Dev, Machine Learning and Artificial
+                    Intelligence, App Dev, Robotics, Cloud Computing etc.)
+                </li>
+                <li><textarea id="a1"></textarea></li>
+            </ul>
+            <ul>
+                <li>
+                    <b class="itwasnecessary">Q No. 2:</b>
+                    Your level of knowledge in your domain of interest(Describe any projects made)
+                </li>
+                <li><textarea id="a2"></textarea></li>
+            </ul>
+            <ul>
+                <li><b class="itwasnecessary">
+                        Q No. 3:</b>
+                    Any Suggestions of feedbacks about club ? (Don't be afraid to share)
+
+                </li>
+                <li><textarea id="a3"></textarea></li>
+            </ul>
+        </div>
+
+
+        <div id="picturebox" style="width:100%;height:100%;">
+            <div class="revdivshowimg">
+
+                <div id="camera" style="height:auto;text-align:center;margin:0 auto;"></div>
+
+                <p>
+
+                    <input type="button" value="Ok" id="btAddPicture" onclick="onlineFormApp.addCamPicture()" />
+
+
+                    <input type="button" value="Cancel"
+                        onclick="document.getElementById('picturebox').style.display = 'none';" />
+                </p>
+                <input type="hidden" id="dataurl" />
+            </div>
+        </div>
+        <div style="text-align:center;">
+
+            <input type="button" style="" value="Print to PDF" id="btPrint" onclick="onlineFormApp.printPage();" />
+        </div>
+    </div>
+<footer>&copy; Copyright 2023 CDD Club PMEC</footer>
+
+</body>
+<script>
+
+    Webcam.set({
+        width: 220,
+        height: 190,
+        image_format: 'jpeg',
+        jpeg_quality: 100
+    });
+
+    Webcam.attach('#camera');
+
+    let onlineFormApp = new function () {
+
+
+        this.takeSnapshot = function (oButton) {
+            document.getElementById('picturebox').style.display = 'block';
+        }
+
+
+        let dataURI = '';
+
+        this.addCamPicture = function () {
+            Webcam.snap(function (data_uri) {
+                dataURI = data_uri;
+                document.getElementById('snapShot').innerHTML =
+                    '<img src="' + data_uri + '" width="120px" height="100px" id="studentPic" />';
+            });
+            document.getElementById('picturebox').style.display = 'none';
+        }
+
+        this.printPage = function () {
+
+
+            let style = "<style>";
+            style = style + "h2 {text-align:center; font:22px Times New Roman; font-weight:bold;}";
+            style = style + ".subject {text-align:center;}";
+            style = style + "ul {font:18px Calibri; display:inline-block; list-style:none; margin:0; padding:20px 0;}";
+            style = style + ".answers {font:18px Calibri; padding:10px 0;}";
+            style = style + ".picture {float:right; padding:10px 0;}";
+            style = style + "</style>";
+
+
+            let oDt = new Date();
+
+
+            let sDate = oDt.getDate() + '/' + (oDt.getMonth() + 1) + '/' + oDt.getFullYear();
+
+
+            let hrs = oDt.getHours();
+            let min = oDt.getMinutes();
+            let sec = oDt.getSeconds();
+
+            let sTime = hrs + ':' + min + ':' + sec;
+
+            let header = '<h2>Student Details</h2>' +
+                '<div class="subject">' + document.getElementById("subject").innerHTML + '</div>' +
+                '<ul><li><b>Name of Student</b>: ' + document.getElementById('txtStudentName').value + '</li> ' +
+                '<li><b>Class</b>: ' + document.getElementById('redgno').value + '</li> ' +
+                '<li><b>Class</b>: ' + document.getElementById('brnch').value + '</li> ' +
+
+                '<li><b>Class</b>: ' + document.getElementById('yer').value + '</li> ' +
+                '<li><b>Date & Time</b>: ' + sDate + ' (' + sTime + ')</li>' +
+                '</ul>';
+
+            let theBody = '';
+
+
+            if (dataURI != '') {
+                theBody = '<p class="picture"><img src = "' + document.getElementById('studentPic').src + '" width="90px" height="70px" /></p>';
+            }
+
+
+            let ele_tArea = document.getElementsByTagName('textarea');
+
+            for (let i = 0; i <= ele_tArea.length - 1; i++) {
+                if (theBody === '') {
+                    if (ele_tArea[i].value != '') {
+                        theBody = '<p class="answers"> <b>Response' + (i + 1) + '</b> - ' + ele_tArea[i].value + '</p>';
+                    }
+                }
+                else {
+                    if (ele_tArea[i].value != '') {
+                        theBody = theBody + '<p class="answers"> <b>Response ' + (i + 1) + '</b> - ' + ele_tArea[i].value + '</p>';
+                    }
+                }
+            }
+
+            theBody = header + theBody;
+
+
+            let newWin = window.open('', '', 'height=700,width=700');
+
+            newWin.document.write(style);
+            newWin.document.write(theBody);
+            newWin.print();
+            newWin.close();
+        }
+    }
+</script>
+</html>
